@@ -1,10 +1,11 @@
 :root {
   --neutral-0: #fff;
   --neutral-100: #f6f5f1;
-  --neutral-300: #D0DCD9;
+  --neutral-200: #e0e6e3;
+  --neutral-300: #d0dcd9;
   --neutral-600: #395852;
   --neutral-900: #163a34;
-  --orange-500: #FE9F6B;
+  --orange-500: #fe9f6b;
 }
 
 /* #region Скидання стилів */
@@ -25,6 +26,13 @@ ol {
 a {
   text-decoration: none;
   color: inherit;
+}
+button {
+  /* border: none; */
+  border: 0 none transparent;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
 }
 /* #endregion */
 
@@ -83,11 +91,20 @@ a.btn {
   letter-spacing: -0.5px;
 }
 header {
-    padding-block-start: 16px;
-    padding-block-end: 16px;
+  padding-block-start: 16px;
+  padding-block-end: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    width: 40px;
+    height: 40px;
+    background: var(--neutral-200);
+    border-radius: 4px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+  }
 }
 main {
   .hero {
@@ -95,7 +112,7 @@ main {
     margin-block-end: 64px;
     border-block-start: 1px solid var(--neutral-300);
     div {
-        margin-block-end: 40px;
+      margin-block-end: 40px;
     }
     h1 {
       font-weight: 800;
@@ -110,11 +127,103 @@ main {
     }
 
     & > img {
-      width: 343px;
-      height: 200px;
+      /* width: 343px;
+      height: 200px; */
       background: #ffffff;
       box-shadow: 0px 0px 0px 3.45px #ffffff;
       border-radius: 3px;
+    }
+  }
+  .features {
+    margin-block-end: 64px;
+    h2 {
+      margin-block-end: 32px;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 120%;
+      letter-spacing: -2px;
+      color: var(--neutral-900);
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      column-gap: 32px;
+    }
+    li {
+      min-height: 194px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      padding-block-start: 80px;
+      box-sizing: border-box;
+      &:before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background-color: var(--neutral-0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        border: 1px solid var(--neutral-200);
+        box-shadow: 0px 1px 0px var(--neutral-200);
+      }
+      &:nth-child(1):before {
+        content: "";
+        background-image: url(../assets/images/icon-whole-food-recipes.svg);
+      }
+      &:nth-child(2):before {
+        content: "";
+        background-image: url(../assets/images/icon-minimum-fuss.svg);
+      }
+      &:nth-child(3):before {
+        content: "";
+        background-image: url(../assets/images/icon-search-in-seconds.svg);
+      }
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+      letter-spacing: -1px;
+      color: var(--neutral-900);
+      margin-block-end: 12px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: -0.4px;
+      color: var(--neutral-600);
+    }
+  }
+  .built {
+    margin-block-end: 64px;
+    div {
+      margin-block-end: 32px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    h2 {
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 120%;
+      letter-spacing: -2px;
+      color: var(--neutral-900);
+    }
+    p {
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: -0.4px;
+      color: var(--neutral-600);
+    }
+    img {
+      border-radius: 10px;
     }
   }
 }
