@@ -13,7 +13,8 @@ body,
 h1,
 h2,
 h3,
-p {
+p,
+hr {
   margin: 0;
   font-weight: 400;
 }
@@ -63,6 +64,25 @@ body {
   background-color: var(--neutral-100);
   color: var(--neutral-600);
 }
+hr {
+  border-color: var(--neutral-300);
+}
+h2.nunito {
+  margin-block-end: 32px;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -2px;
+  color: var(--neutral-900);
+}
+h3.nunito {
+  margin-block-end: 12px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: -1px;
+  color: var(--neutral-900);
+}
 p {
   font-size: 20px;
   line-height: 150%;
@@ -89,6 +109,14 @@ a.btn {
   font-size: 20px;
   line-height: 140%;
   letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: var(--neutral-600);
+  }
+  &:focus {
+    border: 3px solid var(--neutral-0);
+    outline: 2px solid var(--neutral-900);
+  }
 }
 header {
   padding-block-start: 16px;
@@ -104,13 +132,24 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
+    &:hover {
+      scale: 1.05;
+      rotate: -5deg;
+    }
+    &:focus {
+      border: 3px solid var(--neutral-0);
+      outline: 2px solid var(--neutral-900);
+    }
   }
 }
-main {
+.about-page header {
+}
+.home-page main {
   .hero {
     padding-block-start: 48px;
     margin-block-end: 64px;
-    border-block-start: 1px solid var(--neutral-300);
+    /* border-block-start: 1px solid var(--neutral-300); */
     div {
       margin-block-end: 40px;
     }
@@ -121,6 +160,16 @@ main {
       letter-spacing: -2px;
       color: var(--neutral-900);
       margin-block-end: 16px; /* margin-bottom :16px; */
+      span {
+        /* text-decoration-line: underline;
+        text-decoration-color: orange;
+        text-decoration-thickness: 20px;
+        text-underline-offset: 2px; */
+        background-image: url(../assets/images/hero-background-orange.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center bottom 25%;
+      }
     }
     p {
       margin-block-end: 32px;
@@ -136,14 +185,14 @@ main {
   }
   .features {
     margin-block-end: 64px;
-    h2 {
+    /* h2 {
       margin-block-end: 32px;
       font-weight: 800;
       font-size: 40px;
       line-height: 120%;
       letter-spacing: -2px;
       color: var(--neutral-900);
-    }
+    } */
     ul {
       display: flex;
       flex-direction: column;
@@ -209,13 +258,13 @@ main {
       flex-direction: column;
       row-gap: 20px;
     }
-    h2 {
+    /* h2 {
       font-weight: 800;
       font-size: 40px;
       line-height: 120%;
       letter-spacing: -2px;
       color: var(--neutral-900);
-    }
+    } */
     p {
       font-size: 20px;
       line-height: 150%;
@@ -225,5 +274,182 @@ main {
     img {
       border-radius: 10px;
     }
+  }
+}
+.ready {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 48px;
+  gap: 32px;
+  min-height: 353px;
+  background-color: var(--neutral-200);
+  border-radius: 16px;
+  h2 {
+    text-align: center;
+    margin-block-end: 12px;
+    /* font-weight: 800;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: -2px;
+    color: var(--neutral-900); */
+  }
+  p {
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.4px;
+    color: var(--neutral-600);
+  }
+}
+.about-page main {
+  section {
+    padding-block: 48px;
+  }
+  .hero {
+    padding-block-end: 64px;
+    /* border-block-start: 1px solid var(--neutral-300); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px 64px;
+    hgroup {
+      margin-block-end: 24px;
+    }
+    h1 {
+      text-align: center;
+      align-content: center;
+      min-width: 119px;
+      width: fit-content;
+      padding-inline: 6px;
+      height: 32px;
+      background: var(--orange-500);
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: -0.5px;
+      color: var(--neutral-900);
+      margin-block-end: 26px;
+    }
+    h1 + p {
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 120%;
+      letter-spacing: -2px;
+      color: var(--neutral-900);
+    }
+    div p:not(:last-child) {
+      margin-block-end: 16px;
+    }
+
+    img {
+      border-radius: 11px;
+    }
+  }
+  .list {
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+    }
+    li {
+      padding-inline-start: 52px;
+      position: relative;
+      &::before {
+        /* content: url(../assets/images/icon-bullet-point.svg); */
+        content: "";
+        background-image: url(../assets/images/icon-bullet-point.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  .beyond {
+    div {
+      margin-block-end: 32px;
+    }
+    p {
+      margin-block-end: 12px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      li {
+        padding-inline-start: 30px;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: -0.4px;
+        position: relative;
+        &::before {
+          content: "";
+          background-color: var(--neutral-600);
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate(150%, 150%);
+        }
+      }
+    }
+    img {
+      border-radius: 11px;
+    }
+  }
+}
+footer {
+  padding-block: 32px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    li {
+      min-height: 22px;
+      line-height: 0;
+    }
+    a {
+      outline: 2px solid transparent;
+      line-height: 0;
+      /* font-size: 0; */
+      display: block;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      &:focus {
+        border: 2px solid transparent;
+        outline: 2px solid var(--neutral-900);
+      }
+    }
+    a img {
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 0.7;
+        scale: 1.05;
+        rotate: -5deg;
+      }
+    }
+  }
+  p {
+    /* text-align: center; */
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: var(--neutral-900);
   }
 }
